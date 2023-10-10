@@ -4,7 +4,7 @@ import styles from "./style.module.css";
 
 import Header from "../Header";
 import ImageSlider from "../ImageSlider";
-import FavoriteBook from "../FavoriteBook";
+import PickSeason from "../PickSeason";
 
 const MainPage = () => {
   return (
@@ -25,11 +25,8 @@ const MainPage = () => {
         </div>
         <ImageSlider></ImageSlider>
       </div>
-      <div className={styles.favorite_books}>
-        <FavoriteBook className={styles.favorite_book}></FavoriteBook>
-        <FavoriteBook className={styles.favorite_book}></FavoriteBook>
-        <FavoriteBook className={styles.favorite_book}></FavoriteBook>
-        <FavoriteBook className={styles.favorite_book}></FavoriteBook>
+      <div>
+        <PickSeason></PickSeason>
       </div>
     </div>
   );

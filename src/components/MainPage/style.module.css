@@ -70,13 +70,3 @@ body {
   font-size: 20px;
   line-height: 40px;
 }
-
-.favorite_books {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.favorite_book {
-  width: 50%;
-}
