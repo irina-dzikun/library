@@ -4,11 +4,12 @@ import styles from "./style.module.css";
 
 import Header from "../Header";
 import ImageSlider from "../ImageSlider";
+import FavoriteBook from "../FavoriteBook";
 
 const MainPage = () => {
   return (
-    <div>
-      <div className={styles.container_main}>
+    <div className={styles.container_main}>
+      <div className={styles.container_welcome}>
         <Header></Header>
         <div className={styles.welcome_box}>
           <div className={styles.welcome_text}>
@@ -23,6 +24,12 @@ const MainPage = () => {
           The Brooklyn Library is a free workspace, a large number of books and a cozy coffee shop inside
         </div>
         <ImageSlider></ImageSlider>
+      </div>
+      <div className={styles.favorite_books}>
+        <FavoriteBook className={styles.favorite_book}></FavoriteBook>
+        <FavoriteBook className={styles.favorite_book}></FavoriteBook>
+        <FavoriteBook className={styles.favorite_book}></FavoriteBook>
+        <FavoriteBook className={styles.favorite_book}></FavoriteBook>
       </div>
     </div>
   );

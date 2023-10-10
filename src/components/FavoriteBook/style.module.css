@@ -1,0 +1,82 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  width: 550px;
+  height: 555px;
+  border: 1px solid #000;
+  background: #fff;
+  box-sizing: border-box;
+  padding-left: 20px;
+  margin: 0 60px 40px 20px;
+}
+
+.container_book {
+  display: flex;
+  flex-direction: column;
+}
+
+.staff {
+  margin-top: 15px;
+  color: #000;
+  font-size: 20px;
+  line-height: 40px;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+
+.line {
+  margin-bottom: 20px;
+  width: 60px;
+  height: 1px;
+  background: #bb945f;
+}
+
+.name_book {
+  color: #000;
+  font-size: 15px;
+  line-height: 40px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.writer {
+  margin-bottom: 20px;
+  color: #000;
+  font-size: 15px;
+  line-height: 40px;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.description_book {
+  color: #000;
+  font-size: 15px;
+  line-height: 40px;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+
+.button_buy {
+  margin-top: auto !important;
+  width: 75px;
+  height: 30px;
+  border-radius: 2px;
+  border: 1px solid #0c0c0e;
+  background-color: #fff;
+  color: #0c0c0e;
+  text-align: center;
+  font-size: 10px;
+  line-height: normal;
+  letter-spacing: 1px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.image_box {
+  display: flex;
+  align-items: end;
+  margin-right: -40px;
+}
