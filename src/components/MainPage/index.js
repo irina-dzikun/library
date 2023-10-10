@@ -25,7 +25,10 @@ const MainPage = () => {
         </div>
         <ImageSlider></ImageSlider>
       </div>
-      <div>
+      <div className={styles.container_favorites}>
+        <div className={styles.favorites_title}>Favorites</div>
+        <div className={styles.favorites_line}></div>
+        <div className={styles.favorites_text}>Pick favorites of season</div>
         <PickSeason></PickSeason>
       </div>
     </div>

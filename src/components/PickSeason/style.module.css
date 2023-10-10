@@ -1,7 +1,7 @@
 .favorite_form {
   display: flex;
   flex-direction: row;
-  margin: 40px 0 40px 20px;
+  margin-bottom: 40px;
   gap: 90px;
   color: #000;
   font-size: 20px;
