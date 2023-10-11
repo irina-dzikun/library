@@ -18,6 +18,12 @@ import autumnTwo from "./images/autumn-two.png";
 import autumnThree from "./images/autumn-three.png";
 import autumnFour from "./images/autumn-four.png";
 
+import sliderOne from "./images/slider-one.png";
+import sliderTwo from "./images/slider-two.png";
+import sliderThree from "./images/slider-three.png";
+import sliderFour from "./images/slider-four.png";
+import sliderFive from "./images/slider-five.png";
+
 const booksData = [
   [
     {
@@ -173,4 +179,6 @@ const booksData = [
   ],
 ];
 
-export default booksData;
+const sliderData = [sliderOne, sliderTwo, sliderThree, sliderFour, sliderFive];
+
+export { booksData, sliderData };

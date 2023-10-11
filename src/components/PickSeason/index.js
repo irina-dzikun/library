@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import styles from "./style.module.css";
 
 import FavoriteBook from "../FavoriteBook";
-import booksData from "../../data.js";
+import { booksData } from "../../data.js";
 
 const PickSeason = () => {
   const allBooks = booksData;

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import styles from "./style.module.css";
 
-import sliderData from "../../sliderData";
+import { sliderData } from "../../data";
 
 const ImageSlider = () => {
   const allImages = sliderData;
