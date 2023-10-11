@@ -75,7 +75,7 @@ const PickSeason = () => {
       </div>
       <div className={styles.favorite_books}>
         {allBooks[selectedSeason].map((item) => (
-          <FavoriteBook className={styles.favorite_book} book={item}></FavoriteBook>
+          <FavoriteBook className={styles.favorite_book} book={item} key={item.id}></FavoriteBook>
         ))}
       </div>
     </div>

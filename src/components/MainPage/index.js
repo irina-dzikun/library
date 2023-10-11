@@ -7,7 +7,12 @@ import ImageSlider from "../ImageSlider";
 import PickSeason from "../PickSeason";
 import CoffeeShop from "../CoffeeShop";
 
+import { drinkData, eatData } from "../../data";
+
 const MainPage = () => {
+  const allDrink = drinkData;
+  const allEat = eatData;
+
   return (
     <div className={styles.container_main}>
       <div className={styles.container_welcome}>
@@ -41,8 +46,8 @@ const MainPage = () => {
           also you can try desserts from bakery.
         </div>
         <div className={styles.shop_menu}>
-          <CoffeeShop></CoffeeShop>
-          <CoffeeShop></CoffeeShop>
+          <CoffeeShop allMenu={allDrink} title={"Coffee & Tea"}></CoffeeShop>
+          <CoffeeShop allMenu={allEat} title={"Desserts & Cakes"}></CoffeeShop>
         </div>
       </div>
     </div>
