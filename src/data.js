@@ -181,4 +181,22 @@ const booksData = [
 
 const sliderData = [sliderOne, sliderTwo, sliderThree, sliderFour, sliderFive];
 
-export { booksData, sliderData };
+const drinkData = [
+  { drink: "Cold Brew Coffee", price: 3 },
+  { drink: "French Press Pot", price: 5 },
+  { drink: "Espresso", price: 2 },
+  { drink: "Cappuccino", price: 4 },
+  { drink: "Hot tea", price: 2 },
+  { drink: "Cold tea", price: 2 },
+];
+
+const eatData = [
+  { eat: "Forest Gateau", price: 16 },
+  { eat: "Blue Moon", price: 16 },
+  { eat: "Truffle Cake", price: 15 },
+  { eat: "Chocolate Cake", price: 18 },
+  { eat: "Poet’s Dream Cake", price: 16 },
+  { eat: "Pineapple Cake", price: 14 },
+];
+
+export { booksData, sliderData, drinkData, eatData };
