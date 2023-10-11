@@ -9,14 +9,11 @@ const PickSeason = () => {
   const allBooks = booksData;
   const [selectedSeason, setSelectedSeason] = useState("0");
 
-  const booksSeason = allBooks[selectedSeason].map((item) => item);
-
   function handleChange(e) {
     const { id } = e.target;
     setSelectedSeason();
     setSelectedSeason(id);
   }
-  console.log(typeof selectedSeason);
 
   return (
     <div>
@@ -77,10 +74,9 @@ const PickSeason = () => {
         </form>
       </div>
       <div className={styles.favorite_books}>
-        <FavoriteBook className={styles.favorite_book} book={booksSeason[0]}></FavoriteBook>
-        <FavoriteBook className={styles.favorite_book} book={booksSeason[1]}></FavoriteBook>
-        <FavoriteBook className={styles.favorite_book} book={booksSeason[2]}></FavoriteBook>
-        <FavoriteBook className={styles.favorite_book} book={booksSeason[3]}></FavoriteBook>
+        {allBooks[selectedSeason].map((item) => (
+          <FavoriteBook className={styles.favorite_book} book={item}></FavoriteBook>
+        ))}
       </div>
     </div>
   );
