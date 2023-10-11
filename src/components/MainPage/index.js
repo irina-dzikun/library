@@ -5,6 +5,7 @@ import styles from "./style.module.css";
 import Header from "../Header";
 import ImageSlider from "../ImageSlider";
 import PickSeason from "../PickSeason";
+import CoffeeShop from "../CoffeeShop";
 
 const MainPage = () => {
   return (
@@ -30,6 +31,19 @@ const MainPage = () => {
         <div className={styles.favorites_line}></div>
         <div className={styles.favorites_text}>Pick favorites of season</div>
         <PickSeason></PickSeason>
+      </div>
+      <div className={styles.container_shop}>
+        <div className={styles.shop_title}>Coffee shop</div>
+        <div className={styles.shop_line}></div>
+        <div className={styles.shop_text}>
+          In our library, we have of cozy coffee shop, welcoming in customers with frothy cappuccinos and friendly
+          conversation. you can get a favorite book and read in coffee shop. Our barista to cook you best coffee, and
+          also you can try desserts from bakery.
+        </div>
+        <div className={styles.shop_menu}>
+          <CoffeeShop></CoffeeShop>
+          <CoffeeShop></CoffeeShop>
+        </div>
       </div>
     </div>
   );
