@@ -201,19 +201,7 @@ body {
   margin-bottom: 20px;
 }
 
-.contacts_info_phone {
-  text-decoration: none;
-  color: #000;
-}
-
-.contacts_info_phone:hover {
-  color: #bb945f;
-}
-
 .contacts_info_text_two {
   font-weight: bold;
   margin-top: 20px;
-}
-
-.contacts_map {
 }

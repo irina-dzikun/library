@@ -199,4 +199,25 @@ const eatData = [
   { id: 6, product: "Pineapple Cake", price: 14 },
 ];
 
-export { booksData, sliderData, drinkData, eatData };
+const phoneData = [
+  {
+    id: 1,
+    text: "Please call",
+    link: "tel:+6177302370",
+    number: "(617) 730-2370",
+  },
+  {
+    id: 2,
+    text: "For TTY service, please call",
+    link: "tel:+6177302370",
+    number: "(617) 730-2370",
+  },
+  {
+    id: 3,
+    text: "Putterham Library:",
+    link: "tel:+6177302385",
+    number: "(617) 730-2385",
+  },
+];
+
+export { booksData, sliderData, drinkData, eatData, phoneData };
