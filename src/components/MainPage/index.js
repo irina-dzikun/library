@@ -8,6 +8,7 @@ import PickSeason from "../PickSeason";
 import CoffeeShop from "../CoffeeShop";
 
 import { drinkData, eatData } from "../../data";
+import contactMap from "../../images/contact-map.png";
 
 const MainPage = () => {
   const allDrink = drinkData;
@@ -48,6 +49,43 @@ const MainPage = () => {
         <div className={styles.shop_menu}>
           <CoffeeShop allMenu={allDrink} title={"Coffee & Tea"}></CoffeeShop>
           <CoffeeShop allMenu={allEat} title={"Desserts & Cakes"}></CoffeeShop>
+        </div>
+      </div>
+      <div className={styles.container_contacts}>
+        <div className={styles.contacts_title}>Our Contacts</div>
+        <div className={styles.contacts_line}></div>
+        <div className={styles.contacts_box}>
+          <div className={styles.contacts_info}>
+            <div className={styles.contacts_info_text_one}>For all Library inquiries:</div>
+            <div>
+              Please call
+              <a href="tel:+6177302370" className={styles.contacts_info_phone}>
+                {" "}
+                (617) 730-2370
+              </a>
+            </div>
+            <div>
+              For TTY service, please call
+              <a href="tel:+6177302370" className={styles.contacts_info_phone}>
+                {" "}
+                (617) 730-2370
+              </a>
+            </div>
+            <div>
+              Putterham Library:
+              <a href="tel:+6177302385" className={styles.contacts_info_phone}>
+                {" "}
+                (617) 730-2385
+              </a>
+            </div>
+            <div className={styles.contacts_info_text_two}>Senior Staff</div>
+            <div>
+              Library Director: <b>Amanda Hirst</b>
+            </div>
+          </div>
+          <div className={styles.contacts_map}>
+            <img src={contactMap} alt="map" />
+          </div>
         </div>
       </div>
     </div>
