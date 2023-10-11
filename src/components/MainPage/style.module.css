@@ -96,6 +96,7 @@ body {
 }
 
 .favorites_text {
+  align-self: flex-start;
   margin: 40px 0;
   color: #000;
   font-size: 20px;
