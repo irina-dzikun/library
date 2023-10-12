@@ -10,6 +10,7 @@
 }
 
 .title_text {
+  font-family: Forum;
   color: #fff;
   font-size: 30px;
   line-height: 50px;
@@ -20,10 +21,13 @@
   width: 50%;
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 30px;
   justify-content: right;
   color: #fff;
+  font-family: Inter;
   font-size: 20px;
+  line-height: 50px; /* 250% */
 }
 
 .pages_text:hover {

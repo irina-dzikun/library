@@ -35,8 +35,9 @@ body {
   justify-content: center;
   color: #fff;
   text-align: center;
+  font-family: Forum;
   font-size: 40px;
-  line-height: 50px;
+  line-height: 50px; /* 125% */
   letter-spacing: 3px;
   text-transform: uppercase;
 }
@@ -49,6 +50,7 @@ body {
 
 .about_title {
   margin: 20px 0;
+  font-family: Forum;
   color: #0c0c0e;
   font-size: 40px;
   line-height: 40px;
@@ -65,6 +67,7 @@ body {
 
 .about_text {
   margin: 40px 0 20px;
+  font-family: Inter;
   color: #000;
   text-align: center;
   font-size: 20px;
@@ -81,6 +84,7 @@ body {
 
 .favorites_title {
   margin: 20px 0;
+  font-family: Forum;
   color: #0c0c0e;
   font-size: 40px;
   line-height: 40px;
@@ -99,9 +103,10 @@ body {
   align-self: flex-start;
   margin: 40px 0;
   color: #000;
+  font-family: Inter;
   font-size: 20px;
+  font-weight: 700;
   line-height: normal;
-  font-weight: bold;
 }
 
 .container_shop {
@@ -115,9 +120,9 @@ body {
 }
 
 .shop_title {
-  font-family: "Forum";
   margin-bottom: 20px;
   color: #0c0c0e;
+  font-family: Forum;
   font-size: 40px;
   line-height: 40px;
   letter-spacing: 2px;
@@ -133,13 +138,12 @@ body {
 
 .shop_text {
   margin: 40px 0;
-  padding: 0 50px;
   color: #000;
   text-align: center;
+  font-family: Inter;
   font-size: 20px;
   line-height: 40px;
   letter-spacing: 2px;
-  text-transform: capitalize;
 }
 
 .shop_menu {
@@ -162,6 +166,7 @@ body {
   margin-bottom: 20px;
   color: #0c0c0e;
   text-align: center;
+  font-family: Forum;
   font-size: 40px;
   line-height: 40px;
   letter-spacing: 2px;
@@ -189,7 +194,7 @@ body {
   align-items: flex-start;
   gap: 20px;
   color: #000;
-  text-align: center;
+  font-family: Inter;
   font-size: 20px;
   line-height: 40px;
   letter-spacing: 2px;
@@ -197,11 +202,11 @@ body {
 }
 
 .contacts_info_text_one {
-  font-weight: bold;
+  font-weight: 700;
   margin-bottom: 20px;
 }
 
 .contacts_info_text_two {
-  font-weight: bold;
+  font-weight: 700;
   margin-top: 20px;
 }

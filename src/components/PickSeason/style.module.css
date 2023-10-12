@@ -4,21 +4,13 @@
   margin-bottom: 40px;
   gap: 90px;
   color: #000;
+  font-family: Inter;
   font-size: 20px;
-  line-height: normal;
-}
-
-.favorite_input:checked {
-  font-size: 60px;
 }
 
 .favorite_form_dot {
   cursor: pointer;
   accent-color: #000;
-}
-
-.favorite_form_active {
-  font-weight: bold;
 }
 
 .favorite_books {
