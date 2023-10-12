@@ -8,6 +8,7 @@ import PickSeason from "../PickSeason";
 import CoffeeShop from "../CoffeeShop";
 import ContactPhone from "../ContactPhone";
 import LibraryCard from "../LibraryCard";
+import Footer from "../Footer";
 
 import { drinkData, eatData, phoneData } from "../../data";
 import contactMap from "../../images/contact-map.png";
@@ -91,6 +92,7 @@ const MainPage = () => {
           </div>
         </div>
       </div>
+      <Footer></Footer>
     </div>
   );
 };
