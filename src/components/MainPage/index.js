@@ -7,6 +7,7 @@ import ImageSlider from "../ImageSlider";
 import PickSeason from "../PickSeason";
 import CoffeeShop from "../CoffeeShop";
 import ContactPhone from "../ContactPhone";
+import LibraryCard from "../LibraryCard";
 
 import { drinkData, eatData, phoneData } from "../../data";
 import contactMap from "../../images/contact-map.png";
@@ -67,6 +68,26 @@ const MainPage = () => {
           </div>
           <div className={styles.contacts_map}>
             <img src={contactMap} alt="map" />
+          </div>
+        </div>
+      </div>
+      <div className={styles.container_labrary_cards}>
+        <div className={styles.labrary_cards_title}>Digital Library Cards</div>
+        <div className={styles.labrary_cards_line}></div>
+        <div className={styles.find_get_box}>
+          <div className={styles.find_box}>
+            <div className={styles.find_title}>Find your Library card</div>
+            <LibraryCard></LibraryCard>
+          </div>
+          <div className={styles.get_box}>
+            <div className={styles.get_title}>Get a reader card</div>
+            <div className={styles.get_text}>
+              You will be able to see a reader card after logging into account or you can register a new account
+            </div>
+            <div className={styles.buttons_box}>
+              <button className={styles.get_button}>Sign Up</button>
+              <button className={styles.get_button}>Log in</button>
+            </div>
           </div>
         </div>
       </div>
