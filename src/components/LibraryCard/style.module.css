@@ -1,0 +1,65 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 600px;
+  flex-shrink: 0;
+  border: 3px solid #bb945f;
+  background: #fff;
+  padding: 20px 20px 30px;
+  box-sizing: border-box;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  background: #bb945f;
+  padding: 20px 20px 0;
+}
+
+.name_card {
+  margin-bottom: 20px;
+  color: #000;
+  font-family: Forum;
+  font-size: 30px;
+  line-height: 50px;
+  letter-spacing: 0.6px;
+}
+
+.input {
+  margin-bottom: 25px;
+  width: 520px;
+  height: 66px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #fff;
+  outline: none;
+  border: 0;
+  padding-left: 20px;
+  cursor: pointer;
+  color: #8e8e8e;
+  font-family: Forum;
+  font-size: 30px;
+  line-height: 50px;
+  letter-spacing: 0.6px;
+}
+
+.check_button {
+  padding: 10px 40px;
+  border-radius: 2px;
+  border: 1px solid #0c0c0e;
+  background: #fff;
+  cursor: pointer;
+  color: #0c0c0e;
+  text-align: center;
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.check_button:hover {
+  background: #bb945f;
+  transition: all ease 0.9s;
+}
