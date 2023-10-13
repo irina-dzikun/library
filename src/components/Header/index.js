@@ -4,7 +4,7 @@ import styles from "./style.module.css";
 
 import iconProfile from "../../images/icon-profile.svg";
 
-const Header = ({ toggleModalRegister, toggleDropMenu, isOpenDropMenu }) => {
+const Header = ({ toggleDropMenu, isOpenDropMenu, toggleModalRegister, toggleModalLogIn }) => {
   return (
     <div className={styles.container_main}>
       <div className={styles.container}>
@@ -28,7 +28,14 @@ const Header = ({ toggleModalRegister, toggleDropMenu, isOpenDropMenu }) => {
       <div className={isOpenDropMenu ? styles.dropMenu_no_active : styles.dropMenu_no}>
         <div className={styles.dropMenu_no_title}>Profile</div>
         <div className={styles.dropMenu_no_line}></div>
-        <div className={styles.dropMenu_no_log_in}>Log In</div>
+        <div
+          className={styles.dropMenu_no_log_in}
+          onClick={() => {
+            toggleModalLogIn();
+          }}
+        >
+          Log In
+        </div>
         <button
           className={styles.dropMenu_no_register}
           onClick={() => {

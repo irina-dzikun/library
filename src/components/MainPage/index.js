@@ -10,6 +10,7 @@ import ContactPhone from "../ContactPhone";
 import LibraryCard from "../LibraryCard";
 import Footer from "../Footer";
 import ModalRegister from "../ModalRegister";
+import ModalLogIn from "../ModalLogIn";
 
 import { drinkData, eatData, phoneData } from "../../data";
 import contactMap from "../../images/contact-map.png";
@@ -22,6 +23,7 @@ const MainPage = () => {
 
   const [isOpenDropMenu, setIsOpenDropMenu] = useState(false);
   const [isOpenModalRegister, setIsOpenModalRegister] = useState(false);
+  const [isOpenModalLogIn, setIsOpenModalLogIn] = useState(false);
 
   function toggleDropMenu() {
     if (isOpenDropMenu) {
@@ -36,16 +38,25 @@ const MainPage = () => {
     setIsOpenDropMenu(false);
   }
 
+  function toggleModalLogIn() {
+    setIsOpenModalLogIn(true);
+    setIsOpenDropMenu(false);
+  }
+
   return (
     <div className={styles.container_main}>
       <div className={isOpenModalRegister ? styles.modal_register : styles.hidden}>
         {isOpenModalRegister && <ModalRegister setIsOpenModalRegister={setIsOpenModalRegister} />}
+      </div>
+      <div className={isOpenModalLogIn ? styles.modal_register : styles.hidden}>
+        {isOpenModalLogIn && <ModalLogIn setIsOpenModalLogIn={setIsOpenModalLogIn} />}
       </div>
       <div className={styles.container_welcome}>
         <Header
           toggleDropMenu={toggleDropMenu}
           isOpenDropMenu={isOpenDropMenu}
           toggleModalRegister={toggleModalRegister}
+          toggleModalLogIn={toggleModalLogIn}
         ></Header>
         <div className={styles.welcome_box}>
           <div className={styles.welcome_text}>
