@@ -9,19 +9,44 @@ import CoffeeShop from "../CoffeeShop";
 import ContactPhone from "../ContactPhone";
 import LibraryCard from "../LibraryCard";
 import Footer from "../Footer";
+import ModalRegister from "../ModalRegister";
 
 import { drinkData, eatData, phoneData } from "../../data";
 import contactMap from "../../images/contact-map.png";
+import { useState } from "react";
 
 const MainPage = () => {
   const allDrink = drinkData;
   const allEat = eatData;
   const allPhone = phoneData;
 
+  const [isOpenDropMenu, setIsOpenDropMenu] = useState(false);
+  const [isOpenModalRegister, setIsOpenModalRegister] = useState(false);
+
+  function toggleDropMenu() {
+    if (isOpenDropMenu) {
+      setIsOpenDropMenu(false);
+    } else {
+      setIsOpenDropMenu(true);
+    }
+  }
+
+  function toggleModalRegister() {
+    setIsOpenModalRegister(true);
+    setIsOpenDropMenu(false);
+  }
+
   return (
     <div className={styles.container_main}>
+      <div className={isOpenModalRegister ? styles.modal_register : styles.hidden}>
+        {isOpenModalRegister && <ModalRegister setIsOpenModalRegister={setIsOpenModalRegister} />}
+      </div>
       <div className={styles.container_welcome}>
-        <Header></Header>
+        <Header
+          toggleDropMenu={toggleDropMenu}
+          isOpenDropMenu={isOpenDropMenu}
+          toggleModalRegister={toggleModalRegister}
+        ></Header>
         <div className={styles.welcome_box}>
           <div className={styles.welcome_text}>
             Welcome<br></br> to the Brooklyn Library

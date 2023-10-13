@@ -1,20 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 
 import styles from "./style.module.css";
 
 import iconProfile from "../../images/icon-profile.svg";
 
-const Header = () => {
-  const [currentViewDropMenu, setCurrentViewDropMenu] = useState(false);
-
-  function showDropMenu() {
-    if (currentViewDropMenu) {
-      setCurrentViewDropMenu(false);
-    } else {
-      setCurrentViewDropMenu(true);
-    }
-  }
-
+const Header = ({ toggleModalRegister, toggleDropMenu, isOpenDropMenu }) => {
   return (
     <div className={styles.container_main}>
       <div className={styles.container}>
@@ -30,16 +20,23 @@ const Header = () => {
             alt="icon-profile"
             className={styles.icon_profile}
             onClick={() => {
-              showDropMenu();
+              toggleDropMenu();
             }}
           />
         </div>
       </div>
-      <div className={currentViewDropMenu ? styles.dropMenu_no_active : styles.dropMenu_no}>
+      <div className={isOpenDropMenu ? styles.dropMenu_no_active : styles.dropMenu_no}>
         <div className={styles.dropMenu_no_title}>Profile</div>
         <div className={styles.dropMenu_no_line}></div>
         <div className={styles.dropMenu_no_log_in}>Log In</div>
-        <div className={styles.dropMenu_no_register}>Register</div>
+        <button
+          className={styles.dropMenu_no_register}
+          onClick={() => {
+            toggleModalRegister();
+          }}
+        >
+          Register
+        </button>
       </div>
     </div>
   );
