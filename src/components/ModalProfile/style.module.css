@@ -1,0 +1,164 @@
+.container_main {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+}
+
+.container {
+  width: 600px;
+  height: 400px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.close_button {
+  border: 0;
+  background: #fff;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+}
+
+.close_button:hover {
+  border-radius: 50%;
+  background: #bb945f;
+}
+
+.container_left {
+  background: black;
+  padding: 0 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon_name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  width: 80px;
+  height: 80px;
+  background: white;
+  color: #bb945f;
+  text-align: center;
+  font-family: Inter;
+  font-size: 20px;
+  line-height: 20px;
+  text-transform: capitalize;
+}
+
+.name {
+  padding: 5px 15px;
+  background: white;
+  color: #000;
+  text-align: center;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.container_right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 40px 20px;
+}
+
+.title {
+  margin-bottom: 40px;
+  color: #000;
+  text-align: center;
+  font-family: Forum;
+  font-size: 40px;
+  line-height: 20px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.icon_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon_title {
+  color: #000;
+  text-align: center;
+  font-family: Inter;
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: 0.4px;
+  text-transform: capitalize;
+}
+
+.icon_counter {
+  color: #000;
+  text-align: center;
+  font-family: Inter;
+  font-size: 10px;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+  text-transform: capitalize;
+}
+
+.title_info {
+  margin: 20px 0 30px;
+  color: #0c0c0e;
+  text-align: center;
+  font-family: Inter;
+  font-size: 25px;
+  line-height: 20px;
+}
+
+.list {
+  margin: 0;
+  color: #000;
+  font-family: Inter;
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+
+.card_box {
+  display: flex;
+  flex-direction: row;
+  margin-top: 40px;
+}
+
+.card_text {
+  color: #0c0c0e;
+  text-align: center;
+  font-family: Inter;
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.cart_number {
+  color: #bb945f;
+  text-align: center;
+  font-family: Inter;
+  font-size: 20px;
+  line-height: 20px;
+}
