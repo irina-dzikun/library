@@ -9,6 +9,15 @@ const toFirstLetterUp = (name) => {
   return result;
 };
 
+const toNameProfile = (firstName, lastName) => {
+  const splittedFirst = firstName.split("");
+  const splittedLast = lastName.split("");
+  const first = splittedFirst[0];
+  const last = splittedLast[0];
+  const result = [first, last].join("");
+  return result.toUpperCase();
+};
+
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
@@ -23,6 +32,7 @@ export const AuthProvider = ({ children }) => {
       email: email,
       password: password,
       cardNumber: cardNumber,
+      nameProfile: toNameProfile(firstName, lastName),
     };
     if (localStorage.getItem("clients") === null) {
       allClients.push(client);
@@ -58,6 +68,6 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ cleint: client, register: register, logIn: logIn }}>{children}</AuthContext.Provider>
+    <AuthContext.Provider value={{ client: client, register: register, logIn: logIn }}>{children}</AuthContext.Provider>
   );
 };

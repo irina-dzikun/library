@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 
 import styles from "./style.module.css";
 
 import iconProfile from "../../images/icon-profile.svg";
 
+import { AuthContext } from "../../contexts";
+
 const Header = ({ toggleDropMenu, isOpenDropMenu, toggleModalRegister, toggleModalLogIn }) => {
+  const auth = useContext(AuthContext);
+
   return (
     <div className={styles.container_main}>
       <div className={styles.container}>
@@ -15,14 +19,18 @@ const Header = ({ toggleDropMenu, isOpenDropMenu, toggleModalRegister, toggleMod
           <div className={styles.pages_text}>Coffee shop</div>
           <div className={styles.pages_text}>Contacts</div>
           <div className={styles.pages_text}>Library Card</div>
-          <img
-            src={iconProfile}
-            alt="icon-profile"
-            className={styles.icon_profile}
-            onClick={() => {
-              toggleDropMenu();
-            }}
-          />
+          {auth.client === undefined ? (
+            <img
+              src={iconProfile}
+              alt="icon-profile"
+              className={styles.icon_profile}
+              onClick={() => {
+                toggleDropMenu();
+              }}
+            />
+          ) : (
+            <button className={styles.icon_profile_active}>{auth.client.nameProfile}</button>
+          )}
         </div>
       </div>
       <div className={isOpenDropMenu ? styles.dropMenu_no_active : styles.dropMenu_no}>
