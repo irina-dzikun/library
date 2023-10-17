@@ -30,7 +30,7 @@ const Header = ({ toggleDropMenu, isOpenDropMenu, toggleModalRegister, toggleMod
             />
           ) : (
             <button
-              className={styles.icon_profile_active}
+              className={styles.icon_profile_auth}
               onClick={() => {
                 toggleDropMenu();
               }}
@@ -40,11 +40,13 @@ const Header = ({ toggleDropMenu, isOpenDropMenu, toggleModalRegister, toggleMod
           )}
         </div>
       </div>
-      <div className={isOpenDropMenu ? styles.dropMenu_no_active : styles.dropMenu_no}>
-        <div className={styles.dropMenu_no_title}>Profile</div>
-        <div className={styles.dropMenu_no_line}></div>
+      <div className={isOpenDropMenu ? styles.dropMenu_active : styles.dropMenu}>
+        <div className={auth.client ? styles.dropMenu_title_auth : styles.dropMenu_title}>
+          {auth.client ? auth.client.cardNumber : "Profile"}
+        </div>
+        <div className={styles.dropMenu_line}></div>
         <div
-          className={styles.dropMenu_no_log_in}
+          className={styles.dropMenu_log_in}
           onClick={() => {
             auth.client ? toggleModalProfile() : toggleModalLogIn();
           }}
@@ -52,7 +54,7 @@ const Header = ({ toggleDropMenu, isOpenDropMenu, toggleModalRegister, toggleMod
           {auth.client ? "My profile" : "Log In"}
         </div>
         <button
-          className={styles.dropMenu_no_register}
+          className={styles.dropMenu_register}
           onClick={() => {
             auth.client ? (auth.client = undefined) : toggleModalRegister();
           }}

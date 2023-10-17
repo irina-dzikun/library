@@ -11,8 +11,6 @@
   background: #fff;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-
   position: relative;
 }
 
@@ -37,8 +35,10 @@
 }
 
 .container_left {
+  width: 170px;
+  box-sizing: border-box;
   background: black;
-  padding: 0 25px;
+  padding: 0 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -147,6 +147,7 @@
   display: flex;
   flex-direction: row;
   margin-top: 40px;
+  gap: 10px;
 }
 
 .card_text {

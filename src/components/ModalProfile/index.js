@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 
 import styles from "./style.module.css";
 
@@ -6,7 +6,11 @@ import visitsIcon from "../../images/visits-icon.svg";
 import bonusesIcon from "../../images/bonuses-icon.svg";
 import booksIcon from "../../images/books-icon.svg";
 
+import { AuthContext } from "../../contexts";
+
 const ModalProfile = ({ setIsOpenModalProfile }) => {
+  const auth = useContext(AuthContext);
+
   return (
     <div className={styles.container_main}>
       <div className={styles.container}>
@@ -16,18 +20,18 @@ const ModalProfile = ({ setIsOpenModalProfile }) => {
           </button>
         </div>
         <div className={styles.container_left}>
-          <div className={styles.icon_name}>JD</div>
-          <div className={styles.name}>John Doe</div>
+          <div className={styles.icon_name}>{auth.client.nameProfile}</div>
+          <div className={styles.name}>{auth.client.firstName + " " + auth.client.lastName}</div>
         </div>
         <div className={styles.container_right}>
           <div className={styles.title}>My profile</div>
           <div className={styles.icons}>
             <div className={styles.icon_box}>
-              <div className={styles.icon_title}>Visits</div>
+              <div className={styles.icon_title}>Visit</div>
               <div>
                 <img src={visitsIcon} alt="visit" />
               </div>
-              <div className={styles.icon_counter}>23</div>
+              <div className={styles.icon_counter}>{auth.client.visits}</div>
             </div>
             <div className={styles.icon_box}>
               <div className={styles.icon_title}>Bonuses</div>
@@ -51,7 +55,7 @@ const ModalProfile = ({ setIsOpenModalProfile }) => {
           </ul>
           <div className={styles.card_box}>
             <div className={styles.card_text}>Card number</div>
-            <div className={styles.cart_number}>F00234030</div>
+            <div className={styles.cart_number}>{auth.client.cardNumber}</div>
           </div>
         </div>
       </div>

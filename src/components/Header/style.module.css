@@ -45,23 +45,25 @@
   cursor: pointer;
 }
 
-.icon_profile_active {
+.icon_profile_auth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 32px;
   height: 32px;
   border: 0;
   border-radius: 50%;
-
   color: #bb945f;
   font-family: Inter;
   font-size: 15px;
   line-height: 20px;
 }
 
-.dropMenu_no {
+.dropMenu {
   display: none;
 }
 
-.dropMenu_no_active {
+.dropMenu_active {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -77,22 +79,27 @@
   line-height: 20px;
 }
 
-.dropMenu_no_line {
+.dropMenu_line {
   width: 40px;
   height: 1px;
   background: #bb945f;
   margin: 5px 0 15px;
 }
 
-.dropMenu_no_title {
+.dropMenu_title {
   font-weight: 700;
 }
 
-.dropMenu_no_log_in {
+.dropMenu_title_auth {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.dropMenu_log_in {
   cursor: pointer;
 }
 
-.dropMenu_no_register {
+.dropMenu_register {
   color: #000;
   font-family: Inter;
   font-size: 15px;

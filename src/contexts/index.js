@@ -31,10 +31,12 @@ export const AuthProvider = ({ children }) => {
       lastName: toFirstLetterUp(lastName),
       email: email,
       password: password,
-      cardNumber: cardNumber,
+      cardNumber: cardNumber.toUpperCase(),
       nameProfile: toNameProfile(firstName, lastName),
+      visits: 0,
     };
     if (localStorage.getItem("clients") === null) {
+      client.visits = 1;
       allClients.push(client);
       localStorage.setItem("clients", JSON.stringify(allClients));
       setClient(client);
@@ -48,6 +50,7 @@ export const AuthProvider = ({ children }) => {
         }
       }
       if (!isExist) {
+        client.visits = 1;
         allClients.push(client);
         localStorage.setItem("clients", JSON.stringify(allClients));
         setClient(client);
@@ -60,6 +63,7 @@ export const AuthProvider = ({ children }) => {
     let result = false;
     allClients.map((item) => {
       if (item.email === email && item.password === password) {
+        ++item.visits;
         setClient(item);
         result = true;
       }
