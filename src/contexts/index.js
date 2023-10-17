@@ -1,20 +1,20 @@
 import { createContext, useState } from "react";
 
-function toFirstLetterUp(name) {
+const toFirstLetterUp = (name) => {
   const splitted = name.split("");
   const first = splitted[0].toUpperCase();
   const rest = [...splitted];
   rest.splice(0, 1);
   const result = [first, ...rest].join("");
   return result;
-}
+};
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [client, setClient] = useState();
 
-  function register(firstName, lastName, email, password) {
+  const register = (firstName, lastName, email, password) => {
     const cardNumber = Math.random().toString(16).slice(2, 11);
     let allClients = [];
     const client = {
@@ -43,17 +43,19 @@ export const AuthProvider = ({ children }) => {
         setClient(client);
       }
     }
-  }
+  };
 
-  function logIn(email, password) {
+  const logIn = (email, password) => {
     const allClients = JSON.parse(localStorage.getItem("clients"));
-
+    let result = false;
     allClients.map((item) => {
       if (item.email === email && item.password === password) {
         setClient(item);
+        result = true;
       }
     });
-  }
+    return result;
+  };
 
   return (
     <AuthContext.Provider value={{ cleint: client, register: register, logIn: logIn }}>{children}</AuthContext.Provider>
