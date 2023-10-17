@@ -5,7 +5,7 @@ import styles from "./style.module.css";
 import FavoriteBook from "../FavoriteBook";
 import { booksData } from "../../data.js";
 
-const PickSeason = ({ toggleModalBuyCard }) => {
+const PickSeason = ({ toggleModalBuyCard, toggleModalLogIn }) => {
   const allBooks = booksData;
   const [selectedSeason, setSelectedSeason] = useState("0");
 
@@ -80,6 +80,7 @@ const PickSeason = ({ toggleModalBuyCard }) => {
             book={item}
             key={item.id}
             toggleModalBuyCard={toggleModalBuyCard}
+            toggleModalLogIn={toggleModalLogIn}
           ></FavoriteBook>
         ))}
       </div>

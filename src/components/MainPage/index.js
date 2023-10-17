@@ -96,7 +96,7 @@ const MainPage = () => {
         <div className={styles.favorites_title}>Favorites</div>
         <div className={styles.favorites_line}></div>
         <div className={styles.favorites_text}>Pick favorites of season</div>
-        <PickSeason toggleModalBuyCard={toggleModalBuyCard}></PickSeason>
+        <PickSeason toggleModalBuyCard={toggleModalBuyCard} toggleModalLogIn={toggleModalLogIn}></PickSeason>
       </div>
       <div className={styles.container_shop}>
         <div className={styles.shop_title}>Coffee shop</div>

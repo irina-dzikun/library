@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 
 import styles from "./style.module.css";
 
-const FavoriteBook = ({ book, toggleModalBuyCard }) => {
+import { AuthContext } from "../../contexts";
+
+const FavoriteBook = ({ book, toggleModalBuyCard, toggleModalLogIn }) => {
+  const auth = useContext(AuthContext);
+  const [ownBuy, setOwnBuy] = useState("Buy");
+
   return (
     <div className={styles.container}>
       <div className={styles.container_book}>
@@ -11,8 +16,19 @@ const FavoriteBook = ({ book, toggleModalBuyCard }) => {
         <div className={styles.name_book}>{book.name}</div>
         <div className={styles.writer}>{book.writer}</div>
         <div className={styles.description_book}>{book.description}</div>
-        <button className={styles.button_buy} onClick={() => toggleModalBuyCard()}>
-          Buy
+        <button
+          className={styles.button_buy + " " + (ownBuy === "Own" ? styles.button_own : "")}
+          onClick={() => {
+            auth.client === undefined
+              ? toggleModalLogIn()
+              : auth.client.buy
+              ? ownBuy === "Buy"
+                ? setOwnBuy("Own")
+                : setOwnBuy("Buy")
+              : toggleModalBuyCard();
+          }}
+        >
+          {ownBuy}
         </button>
       </div>
       <div className={styles.image_box}>

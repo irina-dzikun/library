@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import styles from "./style.module.css";
 
+import { AuthContext } from "../../contexts";
+
 const ModalBuyCard = ({ setIsOpenModalBuyCard }) => {
+  const auth = useContext(AuthContext);
+
   return (
     <div className={styles.container_main}>
       <div className={styles.container}>
@@ -42,7 +46,15 @@ const ModalBuyCard = ({ setIsOpenModalBuyCard }) => {
                 <input type="text" className={styles.form_input} />
               </label>
               <div className={styles.button_box}>
-                <button className={styles.form_button} onClick={(e) => e.preventDefault()} type="submit">
+                <button
+                  className={styles.form_button}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    auth.buyCard(auth.client);
+                    setIsOpenModalBuyCard(false);
+                  }}
+                  type="submit"
+                >
                   Buy
                 </button>
                 <div className={styles.price}>$25.00</div>

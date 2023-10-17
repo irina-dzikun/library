@@ -34,6 +34,7 @@ export const AuthProvider = ({ children }) => {
       cardNumber: cardNumber.toUpperCase(),
       nameProfile: toNameProfile(firstName, lastName),
       visits: 0,
+      buy: false,
     };
     if (localStorage.getItem("clients") === null) {
       client.visits = 1;
@@ -64,6 +65,7 @@ export const AuthProvider = ({ children }) => {
     allClients.map((item) => {
       if (item.email === email && item.password === password) {
         ++item.visits;
+        localStorage.setItem("clients", JSON.stringify(allClients));
         setClient(item);
         result = true;
       }
@@ -71,7 +73,22 @@ export const AuthProvider = ({ children }) => {
     return result;
   };
 
+  const buyCard = (client) => {
+    const allClients = JSON.parse(localStorage.getItem("clients"));
+    let result = false;
+    allClients.map((item) => {
+      if (item.email === client.email) {
+        item.buy = true;
+        localStorage.setItem("clients", JSON.stringify(allClients));
+        setClient(item);
+        result = true;
+      }
+    });
+    return result;
+  };
   return (
-    <AuthContext.Provider value={{ client: client, register: register, logIn: logIn }}>{children}</AuthContext.Provider>
+    <AuthContext.Provider value={{ client: client, register: register, logIn: logIn, buyCard: buyCard }}>
+      {children}
+    </AuthContext.Provider>
   );
 };

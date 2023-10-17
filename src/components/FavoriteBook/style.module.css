@@ -79,6 +79,11 @@
   letter-spacing: 1px;
 }
 
+.button_own {
+  border: 1px solid #bb945f;
+  color: #bb945f;
+}
+
 .image_box {
   display: flex;
   align-items: end;
