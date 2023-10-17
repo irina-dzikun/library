@@ -1,0 +1,135 @@
+.container_main {
+  display: flex;
+  justify-content: center;
+  background: #d6cbcb;
+  position: absolute;
+}
+
+.container {
+  width: 650px;
+  height: 540px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.close_button {
+  border: 0;
+  background: #000000;
+  color: #fff;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+}
+
+.container_one {
+  background: #000;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.title {
+  color: white;
+  text-align: center;
+  font-family: Forum;
+  font-size: 40px;
+  line-height: 20px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.container_two {
+  display: flex;
+  flex-direction: row;
+  padding: 30px 40px 40px;
+  gap: 40px;
+}
+
+.form_box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  color: #000;
+  font-family: Inter;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+}
+
+.form_input {
+  width: 200px;
+  height: 20px;
+  border: 1px solid #bb945f;
+  outline: none;
+  margin-top: 10px;
+}
+
+.form_input_small {
+  width: 45px;
+  height: 20px;
+  border: 1px solid #bb945f;
+  outline: none;
+  margin-top: 10px;
+}
+
+.form_input_text_box {
+  display: flex;
+  flex-direction: column;
+}
+
+.button_box {
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+  align-items: flex-end;
+  gap: 25px;
+}
+
+.form_button {
+  width: 75px;
+  height: 30px;
+  background: white;
+  cursor: pointer;
+  color: #0c0c0e;
+  text-align: center;
+  font-family: Inter;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.form_button:hover {
+  background: #bb945f;
+  transition: all ease 0.9s;
+}
+
+.price {
+  color: #0c0c0e;
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.text_end {
+  color: #8e8e8e;
+  font-family: Inter;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 133.333% */
+  letter-spacing: 2px;
+}

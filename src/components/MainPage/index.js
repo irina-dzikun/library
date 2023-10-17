@@ -12,6 +12,7 @@ import Footer from "../Footer";
 import ModalRegister from "../ModalRegister";
 import ModalLogIn from "../ModalLogIn";
 import ModalProfile from "../ModalProfile";
+import ModalBuyCard from "../ModalBuyCard";
 
 import { drinkData, eatData, phoneData } from "../../data";
 import contactMap from "../../images/contact-map.png";
@@ -26,6 +27,7 @@ const MainPage = () => {
   const [isOpenModalRegister, setIsOpenModalRegister] = useState(false);
   const [isOpenModalLogIn, setIsOpenModalLogIn] = useState(false);
   const [isOpenModalProfile, setIsOpenModalProfile] = useState(false);
+  const [isOpenModalBuyCard, setIsOpenModalBuyCard] = useState(false);
 
   function toggleDropMenu() {
     if (isOpenDropMenu) {
@@ -50,6 +52,10 @@ const MainPage = () => {
     setIsOpenDropMenu(false);
   }
 
+  function toggleModalBuyCard() {
+    setIsOpenModalBuyCard(true);
+  }
+
   return (
     <div className={styles.container_main}>
       <div className={isOpenModalRegister ? styles.modal_register : styles.hidden}>
@@ -60,6 +66,9 @@ const MainPage = () => {
       </div>
       <div className={isOpenModalProfile ? styles.modal_register : styles.hidden}>
         {isOpenModalProfile && <ModalProfile setIsOpenModalProfile={setIsOpenModalProfile} />}
+      </div>
+      <div className={isOpenModalBuyCard ? styles.modal_register : styles.hidden}>
+        {isOpenModalBuyCard && <ModalBuyCard setIsOpenModalBuyCard={setIsOpenModalBuyCard} />}
       </div>
       <div className={styles.container_welcome}>
         <Header
@@ -87,7 +96,7 @@ const MainPage = () => {
         <div className={styles.favorites_title}>Favorites</div>
         <div className={styles.favorites_line}></div>
         <div className={styles.favorites_text}>Pick favorites of season</div>
-        <PickSeason></PickSeason>
+        <PickSeason toggleModalBuyCard={toggleModalBuyCard}></PickSeason>
       </div>
       <div className={styles.container_shop}>
         <div className={styles.shop_title}>Coffee shop</div>
