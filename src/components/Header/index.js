@@ -6,7 +6,7 @@ import iconProfile from "../../images/icon-profile.svg";
 
 import { AuthContext } from "../../contexts";
 
-const Header = ({ toggleDropMenu, isOpenDropMenu, toggleModalRegister, toggleModalLogIn }) => {
+const Header = ({ toggleDropMenu, isOpenDropMenu, toggleModalRegister, toggleModalLogIn, toggleModalProfile }) => {
   const auth = useContext(AuthContext);
 
   return (
@@ -29,7 +29,14 @@ const Header = ({ toggleDropMenu, isOpenDropMenu, toggleModalRegister, toggleMod
               }}
             />
           ) : (
-            <button className={styles.icon_profile_active}>{auth.client.nameProfile}</button>
+            <button
+              className={styles.icon_profile_active}
+              onClick={() => {
+                toggleDropMenu();
+              }}
+            >
+              {auth.client.nameProfile}
+            </button>
           )}
         </div>
       </div>
@@ -39,18 +46,18 @@ const Header = ({ toggleDropMenu, isOpenDropMenu, toggleModalRegister, toggleMod
         <div
           className={styles.dropMenu_no_log_in}
           onClick={() => {
-            toggleModalLogIn();
+            auth.client ? toggleModalProfile() : toggleModalLogIn();
           }}
         >
-          Log In
+          {auth.client ? "My profile" : "Log In"}
         </div>
         <button
           className={styles.dropMenu_no_register}
           onClick={() => {
-            toggleModalRegister();
+            auth.client ? (auth.client = undefined) : toggleModalRegister();
           }}
         >
-          Register
+          {auth.client ? "Log Out" : "Register"}
         </button>
       </div>
     </div>

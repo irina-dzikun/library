@@ -6,12 +6,14 @@ import visitsIcon from "../../images/visits-icon.svg";
 import bonusesIcon from "../../images/bonuses-icon.svg";
 import booksIcon from "../../images/books-icon.svg";
 
-const ModalProfile = () => {
+const ModalProfile = ({ setIsOpenModalProfile }) => {
   return (
     <div className={styles.container_main}>
       <div className={styles.container}>
         <div className={styles.close}>
-          <button className={styles.close_button}>x</button>
+          <button className={styles.close_button} onClick={() => setIsOpenModalProfile(false)}>
+            x
+          </button>
         </div>
         <div className={styles.container_left}>
           <div className={styles.icon_name}>JD</div>
