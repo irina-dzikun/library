@@ -4,7 +4,7 @@ import styles from "./style.module.css";
 
 import iconProfile from "../../images/icon-profile.svg";
 
-import { AuthContext } from "../../contexts";
+import { AuthContext } from "../../contexts/AuthContext";
 
 const Header = ({ toggleDropMenu, isOpenDropMenu, toggleModalRegister, toggleModalLogIn, toggleModalProfile }) => {
   const auth = useContext(AuthContext);

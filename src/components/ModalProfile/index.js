@@ -6,7 +6,7 @@ import visitsIcon from "../../images/visits-icon.svg";
 import bonusesIcon from "../../images/bonuses-icon.svg";
 import booksIcon from "../../images/books-icon.svg";
 
-import { AuthContext } from "../../contexts";
+import { AuthContext } from "../../contexts/AuthContext";
 
 const ModalProfile = ({ setIsOpenModalProfile }) => {
   const auth = useContext(AuthContext);

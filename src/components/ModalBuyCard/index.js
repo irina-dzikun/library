@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 
 import styles from "./style.module.css";
 
-import { AuthContext } from "../../contexts";
+import { AuthContext } from "../../contexts/AuthContext";
 
 const ModalBuyCard = ({ setIsOpenModalBuyCard }) => {
   const auth = useContext(AuthContext);

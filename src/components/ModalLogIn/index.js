@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 
 import styles from "./style.module.css";
 
-import { AuthContext } from "../../contexts";
+import { AuthContext } from "../../contexts/AuthContext";
 
 const ModalLogIn = ({ setIsOpenModalLogIn }) => {
   const auth = useContext(AuthContext);
