@@ -3,9 +3,11 @@ import React, { useContext, useState } from "react";
 import styles from "./style.module.css";
 
 import { AuthContext } from "../../contexts/AuthContext";
+import { ModalContext } from "../../contexts/ModalContext";
 
-const ModalLogIn = ({ setIsOpenModalLogIn }) => {
+const ModalLogIn = () => {
   const auth = useContext(AuthContext);
+  const modal = useContext(ModalContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isError, setIsError] = useState(false);
@@ -17,7 +19,7 @@ const ModalLogIn = ({ setIsOpenModalLogIn }) => {
           <button
             className={styles.close_button}
             onClick={() => {
-              setIsOpenModalLogIn(false);
+              modal.toggleModalLogIn();
             }}
           >
             x
@@ -30,7 +32,7 @@ const ModalLogIn = ({ setIsOpenModalLogIn }) => {
             e.preventDefault();
             let isLogIn = auth.logIn(email, password);
             if (isLogIn) {
-              setIsOpenModalLogIn(false);
+              modal.toggleModalLogIn();
             } else {
               setIsError(true);
             }

@@ -3,15 +3,17 @@ import React, { useContext } from "react";
 import styles from "./style.module.css";
 
 import { AuthContext } from "../../contexts/AuthContext";
+import { ModalContext } from "../../contexts/ModalContext";
 
-const ModalBuyCard = ({ setIsOpenModalBuyCard }) => {
+const ModalBuyCard = () => {
   const auth = useContext(AuthContext);
+  const modal = useContext(ModalContext);
 
   return (
     <div className={styles.container_main}>
       <div className={styles.container}>
         <div className={styles.close}>
-          <button className={styles.close_button} onClick={() => setIsOpenModalBuyCard(false)}>
+          <button className={styles.close_button} onClick={() => modal.toggleModalBuyCard()}>
             x
           </button>
         </div>
@@ -51,7 +53,7 @@ const ModalBuyCard = ({ setIsOpenModalBuyCard }) => {
                   onClick={(e) => {
                     e.preventDefault();
                     auth.buyCard(auth.client);
-                    setIsOpenModalBuyCard(false);
+                    modal.toggleModalBuyCard();
                   }}
                   type="submit"
                 >

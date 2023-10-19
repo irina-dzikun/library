@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 
 import styles from "./style.module.css";
 
@@ -14,70 +14,33 @@ import ModalLogIn from "../ModalLogIn";
 import ModalProfile from "../ModalProfile";
 import ModalBuyCard from "../ModalBuyCard";
 
+import { ModalContext } from "../../contexts/ModalContext";
+
 import { drinkData, eatData, phoneData } from "../../data";
 import contactMap from "../../images/contact-map.png";
-import { useState } from "react";
 
 const MainPage = () => {
+  const modal = useContext(ModalContext);
   const allDrink = drinkData;
   const allEat = eatData;
   const allPhone = phoneData;
 
-  const [isOpenDropMenu, setIsOpenDropMenu] = useState(false);
-  const [isOpenModalRegister, setIsOpenModalRegister] = useState(false);
-  const [isOpenModalLogIn, setIsOpenModalLogIn] = useState(false);
-  const [isOpenModalProfile, setIsOpenModalProfile] = useState(false);
-  const [isOpenModalBuyCard, setIsOpenModalBuyCard] = useState(false);
-
-  function toggleDropMenu() {
-    if (isOpenDropMenu) {
-      setIsOpenDropMenu(false);
-    } else {
-      setIsOpenDropMenu(true);
-    }
-  }
-
-  function toggleModalRegister() {
-    setIsOpenModalRegister(true);
-    setIsOpenDropMenu(false);
-  }
-
-  function toggleModalLogIn() {
-    setIsOpenModalLogIn(true);
-    setIsOpenDropMenu(false);
-  }
-
-  function toggleModalProfile() {
-    setIsOpenModalProfile(true);
-    setIsOpenDropMenu(false);
-  }
-
-  function toggleModalBuyCard() {
-    setIsOpenModalBuyCard(true);
-  }
-
   return (
     <div className={styles.container_main}>
-      <div className={isOpenModalRegister ? styles.modal_register : styles.hidden}>
-        {isOpenModalRegister && <ModalRegister setIsOpenModalRegister={setIsOpenModalRegister} />}
+      <div className={modal.isOpenModalRegister ? styles.modal_register : styles.hidden}>
+        {modal.isOpenModalRegister && <ModalRegister />}
       </div>
-      <div className={isOpenModalLogIn ? styles.modal_register : styles.hidden}>
-        {isOpenModalLogIn && <ModalLogIn setIsOpenModalLogIn={setIsOpenModalLogIn} />}
+      <div className={modal.isOpenModalLogIn ? styles.modal_register : styles.hidden}>
+        {modal.isOpenModalLogIn && <ModalLogIn />}
       </div>
-      <div className={isOpenModalProfile ? styles.modal_register : styles.hidden}>
-        {isOpenModalProfile && <ModalProfile setIsOpenModalProfile={setIsOpenModalProfile} />}
+      <div className={modal.isOpenModalProfile ? styles.modal_register : styles.hidden}>
+        {modal.isOpenModalProfile && <ModalProfile />}
       </div>
-      <div className={isOpenModalBuyCard ? styles.modal_register : styles.hidden}>
-        {isOpenModalBuyCard && <ModalBuyCard setIsOpenModalBuyCard={setIsOpenModalBuyCard} />}
+      <div className={modal.isOpenModalBuyCard ? styles.modal_register : styles.hidden}>
+        {modal.isOpenModalBuyCard && <ModalBuyCard />}
       </div>
       <div className={styles.container_welcome}>
-        <Header
-          toggleDropMenu={toggleDropMenu}
-          isOpenDropMenu={isOpenDropMenu}
-          toggleModalRegister={toggleModalRegister}
-          toggleModalLogIn={toggleModalLogIn}
-          toggleModalProfile={toggleModalProfile}
-        ></Header>
+        <Header></Header>
         <div className={styles.welcome_box}>
           <div className={styles.welcome_text}>
             Welcome<br></br> to the Brooklyn Library
@@ -96,7 +59,7 @@ const MainPage = () => {
         <div className={styles.favorites_title}>Favorites</div>
         <div className={styles.favorites_line}></div>
         <div className={styles.favorites_text}>Pick favorites of season</div>
-        <PickSeason toggleModalBuyCard={toggleModalBuyCard} toggleModalLogIn={toggleModalLogIn}></PickSeason>
+        <PickSeason></PickSeason>
       </div>
       <div className={styles.container_shop}>
         <div className={styles.shop_title}>Coffee shop</div>

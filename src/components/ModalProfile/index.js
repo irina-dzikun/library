@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 
 import styles from "./style.module.css";
 
@@ -7,15 +7,17 @@ import bonusesIcon from "../../images/bonuses-icon.svg";
 import booksIcon from "../../images/books-icon.svg";
 
 import { AuthContext } from "../../contexts/AuthContext";
+import { ModalContext } from "../../contexts/ModalContext";
 
-const ModalProfile = ({ setIsOpenModalProfile }) => {
+const ModalProfile = () => {
   const auth = useContext(AuthContext);
+  const modal = useContext(ModalContext);
 
   return (
     <div className={styles.container_main}>
       <div className={styles.container}>
         <div className={styles.close}>
-          <button className={styles.close_button} onClick={() => setIsOpenModalProfile(false)}>
+          <button className={styles.close_button} onClick={() => modal.toggleModalProfile()}>
             x
           </button>
         </div>

@@ -3,9 +3,11 @@ import React, { useContext, useState } from "react";
 import styles from "./style.module.css";
 
 import { AuthContext } from "../../contexts/AuthContext";
+import { ModalContext } from "../../contexts/ModalContext";
 
-const ModalRegister = ({ setIsOpenModalRegister, className }) => {
+const ModalRegister = ({ className }) => {
   const auth = useContext(AuthContext);
+  const modal = useContext(ModalContext);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -18,7 +20,7 @@ const ModalRegister = ({ setIsOpenModalRegister, className }) => {
           <button
             className={styles.close_button}
             onClick={() => {
-              setIsOpenModalRegister(false);
+              modal.toggleModalRegister();
             }}
           >
             x
@@ -30,7 +32,7 @@ const ModalRegister = ({ setIsOpenModalRegister, className }) => {
           onSubmit={(e) => {
             e.preventDefault();
             auth.register(firstName, lastName, email, password);
-            setIsOpenModalRegister(false);
+            modal.toggleModalRegister();
           }}
         >
           <label>

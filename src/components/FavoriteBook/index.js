@@ -3,9 +3,11 @@ import React, { useContext, useState } from "react";
 import styles from "./style.module.css";
 
 import { AuthContext } from "../../contexts/AuthContext";
+import { ModalContext } from "../../contexts/ModalContext";
 
-const FavoriteBook = ({ book, toggleModalBuyCard, toggleModalLogIn }) => {
+const FavoriteBook = ({ book }) => {
   const auth = useContext(AuthContext);
+  const modal = useContext(ModalContext);
   const [ownBuy, setOwnBuy] = useState("Buy");
 
   return (
@@ -20,12 +22,12 @@ const FavoriteBook = ({ book, toggleModalBuyCard, toggleModalLogIn }) => {
           className={styles.button_buy + " " + (ownBuy === "Own" ? styles.button_own : "")}
           onClick={() => {
             auth.client === undefined
-              ? toggleModalLogIn()
+              ? modal.toggleModalLogIn()
               : auth.client.buy
               ? ownBuy === "Buy"
                 ? setOwnBuy("Own")
                 : setOwnBuy("Buy")
-              : toggleModalBuyCard();
+              : modal.toggleModalBuyCard();
           }}
         >
           {ownBuy}
