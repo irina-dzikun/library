@@ -5,7 +5,7 @@ import styles from "./style.module.css";
 import FavoriteBook from "../FavoriteBook";
 import { booksData } from "../../data.js";
 
-const PickSeason = ({ toggleModalBuyCard }) => {
+const PickSeason = () => {
   const allBooks = booksData;
   const [selectedSeason, setSelectedSeason] = useState("0");
 
@@ -75,12 +75,7 @@ const PickSeason = ({ toggleModalBuyCard }) => {
       </div>
       <div className={styles.favorite_books}>
         {allBooks[selectedSeason].map((item) => (
-          <FavoriteBook
-            className={styles.favorite_book}
-            book={item}
-            key={item.id}
-            toggleModalBuyCard={toggleModalBuyCard}
-          ></FavoriteBook>
+          <FavoriteBook className={styles.favorite_book} book={item} key={item.id}></FavoriteBook>
         ))}
       </div>
     </div>
