@@ -6,10 +6,12 @@ import iconProfile from "../../images/icon-profile.svg";
 
 import { AuthContext } from "../../contexts/AuthContext";
 import { ModalContext } from "../../contexts/ModalContext";
+import { BookContext } from "../../contexts/BookContext";
 
 const Header = () => {
   const auth = useContext(AuthContext);
   const modal = useContext(ModalContext);
+  const bookRented = useContext(BookContext);
 
   return (
     <div className={styles.container_main}>
@@ -58,7 +60,9 @@ const Header = () => {
         <button
           className={styles.dropMenu_register}
           onClick={() => {
-            auth.client ? (auth.client = undefined) : modal.toggleModalRegister();
+            auth.client
+              ? (auth.client = undefined || modal.toggleDropMenu(false) || bookRented.logOut())
+              : modal.toggleModalRegister();
           }}
         >
           {auth.client ? "Log Out" : "Register"}

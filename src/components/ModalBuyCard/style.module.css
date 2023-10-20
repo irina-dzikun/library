@@ -82,6 +82,11 @@
   outline: none;
   margin-top: 10px;
 }
+.two_box_form_input {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
 
 .form_input_text_box {
   display: flex;

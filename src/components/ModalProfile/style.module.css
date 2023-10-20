@@ -142,7 +142,8 @@
   letter-spacing: 2px;
   text-transform: capitalize;
   height: 120px;
-  box-sizing: border-box;
+}
+.list_scroll {
   overflow-y: scroll;
 }
 

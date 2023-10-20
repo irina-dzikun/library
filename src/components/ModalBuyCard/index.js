@@ -25,15 +25,18 @@ const ModalBuyCard = () => {
             <form className={styles.form_box}>
               <label>
                 Bank card number
-                <input type="text" className={styles.form_input} />
+                <input type="text" className={styles.form_input} value="1111 2222 1111 2222" />
               </label>
               <label className={styles.form_input_text_box}>
                 Expiration code
-                <input type="text" className={styles.form_input_small} />
+                <div className={styles.two_box_form_input}>
+                  <input type="text" className={styles.form_input_small} value="11" />
+                  <input type="text" className={styles.form_input_small} value="22" />
+                </div>
               </label>
               <label className={styles.form_input_text_box}>
                 CVC
-                <input type="text" className={styles.form_input_small} />
+                <input type="text" className={styles.form_input_small} value="111" />
               </label>
               <label>
                 Cardholder name
@@ -41,11 +44,11 @@ const ModalBuyCard = () => {
               </label>
               <label>
                 Postal code
-                <input type="text" className={styles.form_input} />
+                <input type="text" className={styles.form_input} value="11238" />
               </label>
               <label>
                 City / Town
-                <input type="text" className={styles.form_input} />
+                <input type="text" className={styles.form_input} value="New York" />
               </label>
               <div className={styles.button_box}>
                 <button

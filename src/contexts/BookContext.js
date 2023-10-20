@@ -33,9 +33,19 @@ export const BookProvider = ({ children }) => {
     auth.toClientRentBooks(newAllRentedBooks);
   }
 
+  function logOut() {
+    const clear = [];
+    setAllRentedBooks(clear);
+  }
+
   return (
     <BookContext.Provider
-      value={{ addRentedBooks: addRentedBooks, removeRentedBooks: removeRentedBooks, allRentedBooks: allRentedBooks }}
+      value={{
+        addRentedBooks: addRentedBooks,
+        removeRentedBooks: removeRentedBooks,
+        allRentedBooks: allRentedBooks,
+        logOut: logOut,
+      }}
     >
       {children}
     </BookContext.Provider>

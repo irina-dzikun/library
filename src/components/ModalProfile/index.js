@@ -53,7 +53,7 @@ const ModalProfile = () => {
             </div>
           </div>
           <div className={styles.title_info}>Rented books</div>
-          <ul className={styles.list}>
+          <ul className={styles.list + " " + (bookRented.allRentedBooks.length >= 3 ? styles.list_scroll : "")}>
             {bookRented.allRentedBooks.map((item) => (
               <li>
                 {item.bookName}, {item.bookWriter}
