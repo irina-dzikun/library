@@ -16,13 +16,25 @@ const Header = () => {
   return (
     <div className={styles.container_main}>
       <div className={styles.container}>
-        <div className={styles.title_text}>Brooklyn Public Library</div>
+        <a className={styles.title_text} href="#main">
+          Brooklyn Public Library
+        </a>
         <div className={styles.pages}>
-          <div className={styles.pages_text}>About</div>
-          <div className={styles.pages_text}>Favorites</div>
-          <div className={styles.pages_text}>Coffee shop</div>
-          <div className={styles.pages_text}>Contacts</div>
-          <div className={styles.pages_text}>Library Card</div>
+          <a className={styles.pages_text} href="#about">
+            About
+          </a>
+          <a className={styles.pages_text} href="#favorites">
+            Favorites
+          </a>
+          <a className={styles.pages_text} href="#coffeeShop">
+            Coffee shop
+          </a>
+          <a className={styles.pages_text} href="#contacts">
+            Contacts
+          </a>
+          <a className={styles.pages_text} href="#libraryCard">
+            Library Card
+          </a>
           {auth.client === undefined ? (
             <img
               src={iconProfile}

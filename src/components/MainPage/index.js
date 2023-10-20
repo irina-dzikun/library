@@ -39,7 +39,7 @@ const MainPage = () => {
       <div className={modal.isOpenModalBuyCard ? styles.modal_register : styles.hidden}>
         {modal.isOpenModalBuyCard && <ModalBuyCard />}
       </div>
-      <div className={styles.container_welcome}>
+      <div className={styles.container_welcome} id="main">
         <Header></Header>
         <div className={styles.welcome_box}>
           <div className={styles.welcome_text}>
@@ -47,7 +47,7 @@ const MainPage = () => {
           </div>
         </div>
       </div>
-      <div className={styles.container_about}>
+      <div className={styles.container_about} id="about">
         <div className={styles.about_title}>About</div>
         <div className={styles.about_line}></div>
         <div className={styles.about_text}>
@@ -56,12 +56,14 @@ const MainPage = () => {
         <ImageSlider></ImageSlider>
       </div>
       <div className={styles.container_favorites}>
-        <div className={styles.favorites_title}>Favorites</div>
+        <div className={styles.favorites_title} id="favorites">
+          Favorites
+        </div>
         <div className={styles.favorites_line}></div>
         <div className={styles.favorites_text}>Pick favorites of season</div>
         <PickSeason></PickSeason>
       </div>
-      <div className={styles.container_shop}>
+      <div className={styles.container_shop} id="coffeeShop">
         <div className={styles.shop_title}>Coffee shop</div>
         <div className={styles.shop_line}></div>
         <div className={styles.shop_text}>
@@ -74,7 +76,7 @@ const MainPage = () => {
           <CoffeeShop allMenu={allEat} title={"Desserts & Cakes"}></CoffeeShop>
         </div>
       </div>
-      <div className={styles.container_contacts}>
+      <div className={styles.container_contacts} id="contacts">
         <div className={styles.contacts_title}>Our Contacts</div>
         <div className={styles.contacts_line}></div>
         <div className={styles.contacts_box}>
@@ -91,7 +93,7 @@ const MainPage = () => {
           </div>
         </div>
       </div>
-      <div className={styles.container_labrary_cards}>
+      <div className={styles.container_labrary_cards} id="libraryCard">
         <div className={styles.labrary_cards_title}>Digital Library Cards</div>
         <div className={styles.labrary_cards_line}></div>
         <div className={styles.find_get_box}>
