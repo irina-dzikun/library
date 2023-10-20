@@ -105,8 +105,22 @@ const MainPage = () => {
               You will be able to see a reader card after logging into account or you can register a new account
             </div>
             <div className={styles.buttons_box}>
-              <button className={styles.get_button}>Sign Up</button>
-              <button className={styles.get_button}>Log in</button>
+              <button
+                className={styles.get_button}
+                onClick={() => {
+                  modal.toggleModalRegister();
+                }}
+              >
+                Sign Up
+              </button>
+              <button
+                className={styles.get_button}
+                onClick={() => {
+                  modal.toggleModalLogIn();
+                }}
+              >
+                Log in
+              </button>
             </div>
           </div>
         </div>

@@ -62,7 +62,15 @@ const ModalLogIn = () => {
         </form>
         <div className={styles.end_box}>
           <div className={styles.text}>Don’t have an account?</div>
-          <button className={styles.login_button}>Register</button>
+          <button
+            className={styles.login_button}
+            onClick={() => {
+              modal.toggleModalRegister();
+              modal.toggleModalLogIn();
+            }}
+          >
+            Register
+          </button>
         </div>
       </div>
     </div>
