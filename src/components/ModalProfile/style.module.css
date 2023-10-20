@@ -146,6 +146,20 @@
   overflow-y: scroll;
 }
 
+.list::-webkit-scrollbar {
+  width: 10px;
+}
+
+.list::-webkit-scrollbar-track {
+  background: rgb(210, 190, 154);
+}
+
+.list::-webkit-scrollbar-thumb {
+  background-color: #bb945f;
+  border-radius: 20px;
+  border: 2px solid #997b50;
+}
+
 .card_box {
   display: flex;
   flex-direction: row;
