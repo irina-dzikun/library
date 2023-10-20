@@ -8,10 +8,12 @@ import booksIcon from "../../images/books-icon.svg";
 
 import { AuthContext } from "../../contexts/AuthContext";
 import { ModalContext } from "../../contexts/ModalContext";
+import { BookContext } from "../../contexts/BookContext";
 
 const ModalProfile = () => {
   const auth = useContext(AuthContext);
   const modal = useContext(ModalContext);
+  const bookRented = useContext(BookContext);
 
   return (
     <div className={styles.container_main}>
@@ -47,13 +49,16 @@ const ModalProfile = () => {
               <div>
                 <img src={booksIcon} alt="books" />
               </div>
-              <div className={styles.icon_counter}>2</div>
+              <div className={styles.icon_counter}>{bookRented.allRentedBooks.length}</div>
             </div>
           </div>
           <div className={styles.title_info}>Rented books</div>
           <ul className={styles.list}>
-            <li>The Last Queen, Clive Irving</li>
-            <li>Dominicana, Angie Cruz</li>
+            {bookRented.allRentedBooks.map((item) => (
+              <li>
+                {item.bookName}, {item.bookWriter}
+              </li>
+            ))}
           </ul>
           <div className={styles.card_box}>
             <div className={styles.card_text}>Card number</div>

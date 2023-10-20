@@ -35,6 +35,7 @@ export const AuthProvider = ({ children }) => {
       nameProfile: toNameProfile(firstName, lastName),
       visits: 0,
       buy: false,
+      rentBooks: [],
     };
     if (localStorage.getItem("clients") === null) {
       client.visits = 1;
@@ -86,8 +87,27 @@ export const AuthProvider = ({ children }) => {
     });
     return result;
   };
+
+  const toClientRentBooks = (allRentedBooks) => {
+    const allClients = JSON.parse(localStorage.getItem("clients"));
+    allClients.map((item) => {
+      if (item.email === client.email) {
+        item.rentBooks = allRentedBooks;
+        localStorage.setItem("clients", JSON.stringify(allClients));
+      }
+    });
+  };
+
   return (
-    <AuthContext.Provider value={{ client: client, register: register, logIn: logIn, buyCard: buyCard }}>
+    <AuthContext.Provider
+      value={{
+        client: client,
+        register: register,
+        logIn: logIn,
+        buyCard: buyCard,
+        toClientRentBooks: toClientRentBooks,
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );
