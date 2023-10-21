@@ -14,12 +14,14 @@ import ModalLogIn from "../ModalLogIn";
 import ModalProfile from "../ModalProfile";
 import ModalBuyCard from "../ModalBuyCard";
 
+import { AuthContext } from "../../contexts/AuthContext";
 import { ModalContext } from "../../contexts/ModalContext";
 
 import { drinkData, eatData, phoneData } from "../../data";
 import contactMap from "../../images/contact-map.png";
 
 const MainPage = () => {
+  const auth = useContext(AuthContext);
   const modal = useContext(ModalContext);
   const allDrink = drinkData;
   const allEat = eatData;
@@ -98,33 +100,55 @@ const MainPage = () => {
         <div className={styles.labrary_cards_line}></div>
         <div className={styles.find_get_box}>
           <div className={styles.find_box}>
-            <div className={styles.find_title}>Find your Library card</div>
+            <div className={styles.find_title}>
+              {auth.client !== undefined ? "Your Library card" : "Find your Library card"}
+            </div>
             <LibraryCard></LibraryCard>
           </div>
-          <div className={styles.get_box}>
-            <div className={styles.get_title}>Get a reader card</div>
-            <div className={styles.get_text}>
-              You will be able to see a reader card after logging into account or you can register a new account
+          {auth.client !== undefined ? (
+            <div className={styles.get_box}>
+              <div className={styles.get_title}>Visit your profile</div>
+              <div className={styles.get_text}>
+                With a digital library card you get free access to the Library’s wide array of digital resources
+                including e-books, databases, educational resources, and more.
+              </div>
+              <div className={styles.buttons_box}>
+                <button
+                  className={styles.get_button}
+                  onClick={() => {
+                    modal.toggleModalProfile();
+                  }}
+                >
+                  Profile
+                </button>
+              </div>
             </div>
-            <div className={styles.buttons_box}>
-              <button
-                className={styles.get_button}
-                onClick={() => {
-                  modal.toggleModalRegister();
-                }}
-              >
-                Sign Up
-              </button>
-              <button
-                className={styles.get_button}
-                onClick={() => {
-                  modal.toggleModalLogIn();
-                }}
-              >
-                Log in
-              </button>
+          ) : (
+            <div className={styles.get_box}>
+              <div className={styles.get_title}>Get a reader card</div>
+              <div className={styles.get_text}>
+                You will be able to see a reader card after logging into account or you can register a new account
+              </div>
+              <div className={styles.buttons_box}>
+                <button
+                  className={styles.get_button}
+                  onClick={() => {
+                    modal.toggleModalRegister();
+                  }}
+                >
+                  Sign Up
+                </button>
+                <button
+                  className={styles.get_button}
+                  onClick={() => {
+                    modal.toggleModalLogIn();
+                  }}
+                >
+                  Log in
+                </button>
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
       <Footer></Footer>
