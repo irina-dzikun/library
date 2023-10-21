@@ -2,9 +2,7 @@ import React, { useContext } from "react";
 
 import styles from "./style.module.css";
 
-import visitsIcon from "../../images/visits-icon.svg";
-import bonusesIcon from "../../images/bonuses-icon.svg";
-import booksIcon from "../../images/books-icon.svg";
+import InfoIcons from "../InfoIcons";
 
 import { AuthContext } from "../../contexts/AuthContext";
 import { ModalContext } from "../../contexts/ModalContext";
@@ -29,29 +27,7 @@ const ModalProfile = () => {
         </div>
         <div className={styles.container_right}>
           <div className={styles.title}>My profile</div>
-          <div className={styles.icons}>
-            <div className={styles.icon_box}>
-              <div className={styles.icon_title}>Visit</div>
-              <div>
-                <img src={visitsIcon} alt="visit" />
-              </div>
-              <div className={styles.icon_counter}>{auth.client.visits}</div>
-            </div>
-            <div className={styles.icon_box}>
-              <div className={styles.icon_title}>Bonuses</div>
-              <div>
-                <img src={bonusesIcon} alt="bonuses" />
-              </div>
-              <div className={styles.icon_counter}>1240</div>
-            </div>
-            <div className={styles.icon_box}>
-              <div className={styles.icon_title}>Books</div>
-              <div>
-                <img src={booksIcon} alt="books" />
-              </div>
-              <div className={styles.icon_counter}>{bookRented.allRentedBooks.length}</div>
-            </div>
-          </div>
+          <InfoIcons></InfoIcons>
           <div className={styles.title_info}>Rented books</div>
           <ul className={styles.list + " " + (bookRented.allRentedBooks.length >= 3 ? styles.list_scroll : "")}>
             {bookRented.allRentedBooks.map((item) => (
