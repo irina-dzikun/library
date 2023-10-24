@@ -63,7 +63,7 @@ export const AuthProvider = ({ children }) => {
   const logIn = (email, password) => {
     const allClients = JSON.parse(localStorage.getItem("clients"));
     let result = false;
-    allClients.map((item) => {
+    allClients.forEach((item) => {
       if (item.email === email && item.password === password) {
         ++item.visits;
         localStorage.setItem("clients", JSON.stringify(allClients));
@@ -77,7 +77,7 @@ export const AuthProvider = ({ children }) => {
   const buyCard = (client) => {
     const allClients = JSON.parse(localStorage.getItem("clients"));
     let result = false;
-    allClients.map((item) => {
+    allClients.forEach((item) => {
       if (item.email === client.email) {
         item.buy = true;
         localStorage.setItem("clients", JSON.stringify(allClients));
@@ -90,7 +90,7 @@ export const AuthProvider = ({ children }) => {
 
   const toClientRentBooks = (allRentedBooks) => {
     const allClients = JSON.parse(localStorage.getItem("clients"));
-    allClients.map((item) => {
+    allClients.forEach((item) => {
       if (item.email === client.email) {
         item.rentBooks = allRentedBooks;
         localStorage.setItem("clients", JSON.stringify(allClients));
